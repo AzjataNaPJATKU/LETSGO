@@ -20,6 +20,6 @@ public class TripsControllers: ControllerBase
         var trips = await _context.Trips.Select(e=>new {Name = e.Name, Countries = e.IdCountries.Select(
             c=>new {Name = c.Name})}).ToListAsync();
         
-        return Ok();
+        return Ok(trips);
     }
 }
